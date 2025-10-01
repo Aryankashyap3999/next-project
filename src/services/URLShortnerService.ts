@@ -30,10 +30,10 @@ export class UrlShortenerService {
   }
 
   async getAllUrls() {
-    await this.urlRepository.getAllUrls();
+    return await this.urlRepository.getAllUrls();
   }
 
   async getUrlByShortUrl(shortUrl: string) {
-    await this.urlRepository.getUrlByShortUrl(shortUrl);
+    return await this.urlRepository.getUrlByShortUrl(shortUrl);
   }
 }
