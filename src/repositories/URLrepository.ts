@@ -36,3 +36,5 @@ class UrlRepository {
         return await this.urlModel.findByIdAndUpdate({id, updatedUrl})
     }
 }
+
+export default UrlRepository;
