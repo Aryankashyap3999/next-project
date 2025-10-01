@@ -1,7 +1,7 @@
 import UrlRepository from "@/repositories/URLrepository";
 import shortId from "shortid";
 
-export class Urls {
+export class UrlShortenerService {
   private urlRepository;
 
   constructor() {
