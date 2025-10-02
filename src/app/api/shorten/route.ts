@@ -11,7 +11,12 @@ export async function POST(req: Request) {
 
 export async function GET() {
     const shortenerService = new UrlShortenerService();
-    const response = await shortenerService.getAllUrls();
-    console.log(response);
-    return NextResponse.json({response});
+    const urls = await shortenerService.getAllUrls();
+    console.log("shorten urls is ", urls);
+
+    const response = NextResponse.json({urls});
+    console.log("shorten reponse is ", response);
+    return response;
+
+
 }

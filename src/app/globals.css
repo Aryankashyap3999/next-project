@@ -1,26 +1,48 @@
 @import "tailwindcss";
 
+
+@tailwind utilities;
+
+/* ===============================
+   Theme Variables
+================================= */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-mono: Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* ===============================
+   Base Styles
+================================= */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* ===============================
+   Table Styling
+================================= */
+table {
+  @apply w-full border-collapse;
+}
+
+th {
+  @apply px-6 py-4 text-left font-semibold border-b border-gray-200 dark:border-gray-700;
+}
+
+td {
+  @apply px-6 py-4 border-b border-gray-100 dark:border-gray-800;
+}
+
+/* ===============================
+   Accessibility Enhancements
+================================= */
+a:focus {
+  @apply outline-none ring-2 ring-offset-2 ring-blue-500 dark:ring-blue-400;
+}
+
+button:focus {
+  @apply outline-none ring-2 ring-offset-2 ring-blue-500 dark:ring-blue-400;
 }
